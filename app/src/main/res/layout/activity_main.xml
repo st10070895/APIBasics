@@ -57,8 +57,8 @@
         android:layout_marginTop="69dp"
         android:layout_marginEnd="21dp"
         android:ems="10"
+        android:hint="MemberID"
         android:inputType="text"
-        android:text="MemberID"
         app:layout_constraintEnd_toStartOf="@+id/btnAdd"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -69,8 +69,8 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:ems="10"
+        android:hint="Amount"
         android:inputType="text"
-        android:text="Amount"
         app:layout_constraintBaseline_toBaselineOf="@+id/btnDelete"
         app:layout_constraintEnd_toStartOf="@+id/btnDelete"
         app:layout_constraintStart_toStartOf="parent" />
@@ -82,8 +82,8 @@
         android:layout_marginEnd="22dp"
         android:layout_marginBottom="30dp"
         android:ems="10"
+        android:hint="Message"
         android:inputType="text"
-        android:text="Message"
         app:layout_constraintBottom_toTopOf="@+id/txtSearch"
         app:layout_constraintEnd_toStartOf="@+id/btnShowAll"
         app:layout_constraintStart_toStartOf="parent" />
@@ -133,8 +133,8 @@
         android:layout_marginEnd="21dp"
         android:layout_marginBottom="13dp"
         android:ems="10"
+        android:hint="Search by ID"
         android:inputType="text"
-        android:text="Name"
         app:layout_constraintBottom_toTopOf="@+id/constraintLayout2"
         app:layout_constraintEnd_toStartOf="@+id/btnIDSearch"
         app:layout_constraintStart_toStartOf="parent" />
