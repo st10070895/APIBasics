@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.util.Log
+import android.widget.EditText
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -20,13 +21,13 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.txtDelete)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
         Read()
-        //Post()
+        Post()
     }
 
     fun Read()
@@ -57,7 +58,9 @@ fun Post()
 {
     val executor = Executors.newSingleThreadExecutor()
     executor.execute{
-        val user =LoanPost("15","M10070895","Added by the ST10070895")
+
+        val user =LoanPost("15","M10070895","Added by.......")
+
 
         val (_, _, result)= "https://opsc20240710154110.azurewebsites.net/AddLoan".httpPost()
             .jsonBody(Gson().toJson(user).toString())
@@ -71,4 +74,12 @@ fun Post()
         }
     }
 }
+    fun Add()
+    {
+
+        val inputMemberID = findViewById<EditText>(R.id.txtMemberID)
+        val inputAmount = findViewById<EditText>(R.id.txtAmount)
+        val inputMessage = findViewById<EditText>(R.id.txtMessage)
+        val details =LoanPost()
+    }
 }
