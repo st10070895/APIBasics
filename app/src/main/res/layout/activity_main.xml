@@ -2,81 +2,141 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/txtDelete"
+    android:id="@+id/constraint3"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-
-    <TextView
-        android:id="@+id/txtOutput"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btnAdd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="68dp"
+        android:layout_marginTop="66dp"
+        android:layout_marginEnd="11dp"
+        android:layout_marginBottom="35dp"
+        android:background="@color/blue"
+        android:onClick="Add"
         android:text="Add"
+        app:layout_constraintBottom_toTopOf="@+id/btnDelete"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/txtMemberID"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/txtMemberID"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="27dp"
-        android:ems="10"
-        android:inputType="text"
-        android:text="Name"
-        app:layout_constraintBaseline_toBaselineOf="@+id/btnAdd"
-        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/btnDelete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="26dp"
-        android:layout_marginTop="476dp"
+        android:layout_marginEnd="7dp"
+        android:layout_marginBottom="34dp"
+        android:background="@color/red"
+        android:onClick="Delete"
         android:text="Delete"
-        app:layout_constraintStart_toEndOf="@+id/txtDelete"
+        app:layout_constraintBottom_toTopOf="@+id/btnShowAll"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/txtAmount"
         app:layout_constraintTop_toBottomOf="@+id/btnAdd" />
 
-    <EditText
-        android:id="@+id/txtDelete"
+    <Button
+        android:id="@+id/btnIDSearch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
+        android:layout_marginEnd="11dp"
+        android:layout_marginBottom="10dp"
+        android:background="@color/blue"
+        android:onClick="Search"
+        android:text="Search"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/txtSearch"
+        app:layout_constraintTop_toBottomOf="@+id/btnShowAll" />
+
+    <EditText
+        android:id="@+id/txtMemberID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="69dp"
+        android:layout_marginEnd="21dp"
         android:ems="10"
         android:inputType="text"
-        android:text="Name"
-        app:layout_constraintBaseline_toBaselineOf="@+id/btnDelete"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:text="MemberID"
+        app:layout_constraintEnd_toStartOf="@+id/btnAdd"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/txtAmount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
         android:ems="10"
         android:inputType="text"
-        android:text="Name"
-        tools:layout_editor_absoluteX="30dp"
-        tools:layout_editor_absoluteY="148dp" />
+        android:text="Amount"
+        app:layout_constraintBaseline_toBaselineOf="@+id/btnDelete"
+        app:layout_constraintEnd_toStartOf="@+id/btnDelete"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/editTextText2"
+        android:id="@+id/txtMessage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="22dp"
+        android:layout_marginBottom="30dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Message"
+        app:layout_constraintBottom_toTopOf="@+id/txtSearch"
+        app:layout_constraintEnd_toStartOf="@+id/btnShowAll"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="6dp"
+        android:layout_marginEnd="6dp"
+        android:layout_marginBottom="6dp"
+        android:background="@color/grey"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnIDSearch">
+
+        <TextView
+            android:id="@+id/txtOutput"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.046" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+        android:id="@+id/btnShowAll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="27dp"
+        android:background="@color/blue"
+        android:onClick="ShowAll"
+        android:text="Show All"
+        app:layout_constraintBottom_toTopOf="@+id/btnIDSearch"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/txtMessage"
+        app:layout_constraintTop_toBottomOf="@+id/btnDelete" />
+
+    <EditText
+        android:id="@+id/txtSearch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="21dp"
+        android:layout_marginBottom="13dp"
         android:ems="10"
         android:inputType="text"
         android:text="Name"
-        tools:layout_editor_absoluteX="27dp"
-        tools:layout_editor_absoluteY="230dp" />
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout2"
+        app:layout_constraintEnd_toStartOf="@+id/btnIDSearch"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

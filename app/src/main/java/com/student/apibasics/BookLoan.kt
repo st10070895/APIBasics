@@ -3,7 +3,7 @@ package com.student.apibasics
 data class Loan(
     val loanId: Int,
     val amount: String,
-    val memberId: String,
+    val memberID: String,
     val message: String
 )
 data class LoanPost(
@@ -11,3 +11,8 @@ data class LoanPost(
     val MemberID: String,
     val Message: String
 )
+data class LoanGet(
+    val MemberID: String
+)
+data class DeleteResponse(val rowsAffected: Int)
+
